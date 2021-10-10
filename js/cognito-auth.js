@@ -41,6 +41,7 @@ var WildRydes = window.WildRydes || {};
                     resolve(null);
                 } else {
                     resolve(session.getIdToken().getJwtToken());
+                    alert(session.getIdToken().getJwtToken())
                 }
             });
         } else {
