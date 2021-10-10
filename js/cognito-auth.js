@@ -41,7 +41,6 @@ var jwtDecode = require('jwt-decode');
                     resolve(null);
                 } else {
                     resolve(session.getIdToken().getJwtToken());
-                    alert(jwtDecode(session.getIdToken().getJwtToken()))
                 }
             });
         } else {
