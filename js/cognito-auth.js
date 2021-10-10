@@ -31,6 +31,7 @@ var WildRydes = window.WildRydes || {};
 
     WildRydes.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
         var cognitoUser = userPool.getCurrentUser();
+        alert(cognitoUser)
 
         if (cognitoUser) {
             cognitoUser.getSession(function sessionCallback(err, session) {
