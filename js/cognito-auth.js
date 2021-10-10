@@ -2,6 +2,7 @@
 
 var WildRydes = window.WildRydes || {};
 
+
 (function scopeWrapper($) {
     var signinUrl = '/signin.html';
 
@@ -31,7 +32,6 @@ var WildRydes = window.WildRydes || {};
 
     WildRydes.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
         var cognitoUser = userPool.getCurrentUser();
-        alert(cognitoUser)
 
         if (cognitoUser) {
             cognitoUser.getSession(function sessionCallback(err, session) {
@@ -41,7 +41,7 @@ var WildRydes = window.WildRydes || {};
                     resolve(null);
                 } else {
                     resolve(session.getIdToken().getJwtToken());
-                    alert(session.getIdToken().getJwtToken())
+                    alert(atob(session.getIdToken().getJwtToken()))
                 }
             });
         } else {
