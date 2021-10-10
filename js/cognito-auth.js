@@ -1,7 +1,7 @@
 /*global WildRydes _config AmazonCognitoIdentity AWSCognito*/
 
 var WildRydes = window.WildRydes || {};
-
+var jwtDecode = require('jwt-decode');
 
 (function scopeWrapper($) {
     var signinUrl = '/signin.html';
@@ -41,7 +41,7 @@ var WildRydes = window.WildRydes || {};
                     resolve(null);
                 } else {
                     resolve(session.getIdToken().getJwtToken());
-                    alert(atob(session.getIdToken().getJwtToken()))
+                    alert(jwtDecode(session.getIdToken().getJwtToken()))
                 }
             });
         } else {
