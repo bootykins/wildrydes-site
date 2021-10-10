@@ -1,7 +1,6 @@
 /*global WildRydes _config AmazonCognitoIdentity AWSCognito*/
 
 var WildRydes = window.WildRydes || {};
-var jwtDecode = require('jwt-decode');
 
 (function scopeWrapper($) {
     var signinUrl = '/signin.html';
